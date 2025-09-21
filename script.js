@@ -1,5 +1,4 @@
-let removeBtn = document.querySelector("removeBtn1");
-removeBtn.addEventListener("click", () => {
-  removeBtn.style.background = "red";
+let modeBtn = document.querySelector("#moon-icon");
+modeBtn.addEventListener("click", () => {
+  toggleIcon.src = "icon-sun.svg";
 });
-// add a toggle button which switch two conditions
