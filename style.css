@@ -47,9 +47,6 @@ img {
 /* how to use media queryies ? */
 /*  when webiste is at 422px then center the Extension List 
     and all the selectDiv  */
-#aboutDiv {
-  cursor: pointer;
-}
 
 #separteDiv {
   display: flex;
@@ -188,7 +185,7 @@ img {
   transition: 0.4s;
 }
 input:checked + .slider {
-  background-color: #2196f3;
+  background-color: hsl(3, 71%, 56%);
 }
 input:checked + .slider:before {
   transform: translateX(20px);
