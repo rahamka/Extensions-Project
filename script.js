@@ -61,9 +61,13 @@ let removeBtn9 = document.querySelector(".removeBtn9");
 let removeBtn10 = document.querySelector(".removeBtn10");
 let removeBtn11 = document.querySelector(".removeBtn11");
 let removeBtn12 = document.querySelector(".removeBtn12");
+//
+let bodyBgColor = localStorage.setItem("bodyBlack", "hsl(227, 75%, 14%)");
+let bodyBgColor1 = localStorage.getItem("bodyBlack");
 modeBtn.addEventListener("click", () => {
   if (modeBtn.src.includes("icon-moon.svg")) {
-    document.body.style.background = "hsl(227, 75%, 14%)";
+    document.body.style.background = bodyBgColor1;
+    // when i load the page bodyBackground will not change if bodyBackground is hsl(227, 75%, 14%)?
     modeBtn.src = "icon-sun.svg";
     aboutDiv.style.color = "white";
     modeBtn.style.background = "hsl(226, 11%, 37%)";
@@ -306,6 +310,8 @@ let slider1 = document.querySelector(".slider1");
 if (slider1) {
   slider1.addEventListener("click", () => {
     localStorage.setItem("headerArea1", headerArea1);
+    localStorage.getItem("headerArea1");
+    console.log(headerArea1);
   });
 }
 let slider2 = document.querySelector(".slider2");
