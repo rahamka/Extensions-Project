@@ -297,3 +297,5 @@ inactiveDiv.addEventListener("click", () => {
     inactiveDiv.style.background = "hsl(3, 71%, 56%)";
   }
 });
+// now add logic when i click on the activeDiv then show active extensions
+// else others
