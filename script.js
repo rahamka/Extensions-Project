@@ -163,7 +163,9 @@ modeBtn.addEventListener("click", () => {
     removeBtn10.style.border = "1px solid white";
     removeBtn11.style.border = "1px solid white";
     removeBtn12.style.border = "1px solid white";
-    // removeBtn border styling
+
+    // changing the menu - logo
+    extnLogo.src = "white-logo.png";
   } else if (modeBtn.src.includes("icon-sun.svg")) {
     document.body.style.background = "rgb(223, 234, 245)";
     modeBtn.src = "icon-moon.svg";
@@ -261,12 +263,11 @@ modeBtn.addEventListener("click", () => {
     removeBtn10.style.border = "1px solid black";
     removeBtn11.style.border = "1px solid black";
     removeBtn12.style.border = "1px solid black";
+
+    // changing the menu - logo
+    extnLogo.src = "logo.svg";
   }
 });
-
-allDiv = document.querySelector("#allDiv");
-activeDiv = document.querySelector(".activeDiv");
-inactiveDiv = document.querySelector("#inactiveDiv");
 
 allDiv.addEventListener("click", () => {
   if (modeBtn.src.includes("icon-sun.svg")) {
@@ -297,5 +298,24 @@ inactiveDiv.addEventListener("click", () => {
     inactiveDiv.style.background = "hsl(3, 71%, 56%)";
   }
 });
-// now add logic when i click on the activeDiv then show active extensions
-// else others
+
+// Accessing the Slider Button
+// how i can access other html page using JavaScript?
+let headerArea = document.querySelector("#headerArea");
+let slider1 = document.querySelector(".slider1");
+if (slider1) {
+  slider1.addEventListener("click", () => {
+    localStorage.setItem("headerArea1", headerArea1);
+  });
+}
+let slider2 = document.querySelector(".slider2");
+let slider3 = document.querySelector(".slider3");
+let slider4 = document.querySelector(".slider4");
+let slider5 = document.querySelector(".slider5");
+let slider6 = document.querySelector(".slider6");
+let slider7 = document.querySelector(".slider7");
+let slider8 = document.querySelector(".slider8");
+let slider9 = document.querySelector(".slider9");
+let slider10 = document.querySelector(".slider10");
+let slider11 = document.querySelector(".slider11");
+let slider12 = document.querySelector(".slider12");
