@@ -64,6 +64,7 @@ let removeBtn12 = document.querySelector(".removeBtn12");
 //
 modeBtn.addEventListener("click", () => {
   if (modeBtn.src.includes("icon-moon.svg")) {
+    document.body.style.background = "hsl(227, 75%, 14%)";
     modeBtn.src = "icon-sun.svg";
     aboutDiv.style.color = "white";
     modeBtn.style.background = "hsl(226, 11%, 37%)";
@@ -322,25 +323,14 @@ let slider10 = document.querySelector(".slider10");
 let slider11 = document.querySelector(".slider11");
 let slider12 = document.querySelector(".slider12");
 
-// saving the body background color in local storage
-modeBtn.addEventListener("click", () => {
-  if (modeBtn.src.includes("icon-sun.svg")) {
-    localStorage.setItem("bodyColor", "hsl(227, 75%, 14%)");
-    document.body.style.background = localStorage.getItem("bodyColor");
-  } else if (modeBtn.src.includes("icon-moon.svg")) {
-    localStorage.setItem("bodyColor", "rgb(223, 234, 245)");
-    document.body.style.background = localStorage.getItem("bodyColor");
-    // it is removing after refreshing the page how i can correct this?
-    if (localStorage.getItem("bodyColor")) {
-      document.body.style.background = localStorage.getItem("bodyColor");
-    }
-  }
+extnLogo.addEventListener("click", () => {
+  location.reload();
 });
 
-// Restore background color from localStorage when page reloads
-window.addEventListener("load", () => {
-  let savedColor = localStorage.getItem("bodyColor");
-  if (savedColor) {
-    document.body.style.background = savedColor;
-  }
-});
+// where i fail in this project ?
+// In this project I should've to care changes when we're reloading the page our changes come origin position?
+// In this project I didn't added if i want to click on the remove item then it should be remove
+// if i want to click on the activeDiv, allDiv, inactiveDiv then style will remove from others?
+// i were not didn't use the extnLogo actual logo ?
+// i were not added logic on the allDiv, activeDiv & inactiveDiv when click on this project then show only activeItems ?
+// no matter i should've create another project try to improve in that project ok ?
