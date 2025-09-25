@@ -326,13 +326,6 @@ extnLogo.addEventListener("click", () => {
   location.reload();
 });
 
-// where i fail in this project ?
-// In this project I should've to care changes when we're reloading the page our changes come origin position?
-// In this project I didn't added if i want to click on the remove item then it should be remove
-// if i want to click on the activeDiv, allDiv, inactiveDiv then style will remove from others?
-// i were not added logic on the allDiv, activeDiv & inactiveDiv when click on this project then show only activeItems ?
-// no matter i should've create another project try to improve in that project ok ?
-
 modeBtn.addEventListener("click", (evt) => {
   let value = document.querySelector("#aboutDiv");
   if (value.style.color == "white") {
@@ -348,7 +341,6 @@ modeBtn.addEventListener("click", (evt) => {
     console.log("white");
   }
 });
-// note: everything is ok but if i click again i isn't changing the setItem?
 
 let getItem = localStorage.getItem("bodyColor");
 window.addEventListener("load", () => {
@@ -423,3 +415,15 @@ window.addEventListener("load", () => {
     // set the removeBtns, modeBtn Icons Color required only these two things?
   }
 });
+
+// where i fail in this project ?
+// In this project I didn't added if i want to click on the remove item then
+// it should be remove
+
+// if i want to click on the activeDiv, allDiv, inactiveDiv then style will
+// remove from others?
+
+// i were not added logic on the allDiv, activeDiv & inactiveDiv when click
+// on this project then show only activeItems ?
+
+// no matter i should've create another project try to improve in that project ok ?
