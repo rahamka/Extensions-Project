@@ -67,7 +67,6 @@ modeBtn.addEventListener("click", () => {
     document.body.style.background = "hsl(227, 75%, 14%)";
     modeBtn.src = "icon-sun.svg";
     aboutDiv.style.color = "white";
-    modeBtn.style.background = "hsl(226, 11%, 37%)";
     modeBtn.style.background = "hsl(226, 25%, 17%)";
     allDiv.style.background = "hsl(225, 23%, 24%)";
     activeDiv.style.background = "hsl(225, 23%, 24%)";
@@ -331,6 +330,96 @@ extnLogo.addEventListener("click", () => {
 // In this project I should've to care changes when we're reloading the page our changes come origin position?
 // In this project I didn't added if i want to click on the remove item then it should be remove
 // if i want to click on the activeDiv, allDiv, inactiveDiv then style will remove from others?
-// i were not didn't use the extnLogo actual logo ?
 // i were not added logic on the allDiv, activeDiv & inactiveDiv when click on this project then show only activeItems ?
 // no matter i should've create another project try to improve in that project ok ?
+
+modeBtn.addEventListener("click", (evt) => {
+  let value = document.querySelector("#aboutDiv");
+  if (value.style.color == "white") {
+    // bodyColor
+    localStorage.setItem("bodyColor", "hsl(227, 75%, 14%)");
+    // headerColor
+    localStorage.setItem("headerColor", "hsl(225, 23%, 24%)");
+    console.log("black");
+  } else if (value.style.color == "black") {
+    localStorage.setItem("bodyColor", "rgb(223, 234, 245)");
+    // headerColor
+    localStorage.setItem("headerColor", "#ffff");
+    console.log("white");
+  }
+});
+// note: everything is ok but if i click again i isn't changing the setItem?
+
+let getItem = localStorage.getItem("bodyColor");
+window.addEventListener("load", () => {
+  if (getItem == "hsl(227, 75%, 14%)") {
+    document.body.style.backgroundColor = "hsl(227, 75%, 14%)";
+    // reasign homeDiv, headerAreas color
+    headerArea1.style.backgroundColor = "hsl(225, 23%, 24%)";
+    headerArea2.style.backgroundColor = "hsl(225, 23%, 24%)";
+    headerArea3.style.backgroundColor = "hsl(225, 23%, 24%)";
+    headerArea4.style.backgroundColor = "hsl(225, 23%, 24%)";
+    headerArea5.style.backgroundColor = "hsl(225, 23%, 24%)";
+    headerArea6.style.backgroundColor = "hsl(225, 23%, 24%)";
+    headerArea7.style.backgroundColor = "hsl(225, 23%, 24%)";
+    headerArea8.style.backgroundColor = "hsl(225, 23%, 24%)";
+    headerArea9.style.backgroundColor = "hsl(225, 23%, 24%)";
+    headerArea10.style.backgroundColor = "hsl(225, 23%, 24%)";
+    headerArea11.style.backgroundColor = "hsl(225, 23%, 24%)";
+    headerArea12.style.backgroundColor = "hsl(225, 23%, 24%)";
+    // allDiv, activeDiv & inactiveDivs color
+    allDiv.style.backgroundColor = "hsl(225, 23%, 24%)";
+    activeDiv.style.backgroundColor = "hsl(225, 23%, 24%)";
+    inactiveDiv.style.backgroundColor = "hsl(225, 23%, 24%)";
+    // homeDiv color
+    homeDiv.style.backgroundColor = "hsl(225, 23%, 24%)";
+    // body Text color
+    document.body.style.color = "white";
+    // removeBtn color
+    removeBtn1.style.background = "hsl(225, 23%, 24%)";
+    removeBtn2.style.background = "hsl(225, 23%, 24%)";
+    removeBtn3.style.background = "hsl(225, 23%, 24%)";
+    removeBtn4.style.background = "hsl(225, 23%, 24%)";
+    removeBtn5.style.background = "hsl(225, 23%, 24%)";
+    removeBtn6.style.background = "hsl(225, 23%, 24%)";
+    removeBtn7.style.background = "hsl(225, 23%, 24%)";
+    removeBtn8.style.background = "hsl(225, 23%, 24%)";
+    removeBtn9.style.background = "hsl(225, 23%, 24%)";
+    removeBtn10.style.background = "hsl(225, 23%, 24%)";
+    removeBtn11.style.background = "hsl(225, 23%, 24%)";
+    removeBtn12.style.background = "hsl(225, 23%, 24%)";
+
+    removeBtn1.style.color = "#ffff";
+    removeBtn2.style.color = "#ffff";
+    removeBtn3.style.color = "#ffff";
+    removeBtn4.style.color = "#ffff";
+    removeBtn5.style.color = "#ffff";
+    removeBtn6.style.color = "#ffff";
+    removeBtn7.style.color = "#ffff";
+    removeBtn8.style.color = "#ffff";
+    removeBtn9.style.color = "#ffff";
+    removeBtn10.style.color = "#ffff";
+    removeBtn11.style.color = "#ffff";
+    removeBtn12.style.color = "#ffff";
+    // border styling
+    removeBtn1.style.border = "1px solid white";
+    removeBtn2.style.border = "1px solid white";
+    removeBtn3.style.border = "1px solid white";
+    removeBtn4.style.border = "1px solid white";
+    removeBtn5.style.border = "1px solid white";
+    removeBtn6.style.border = "1px solid white";
+    removeBtn7.style.border = "1px solid white";
+    removeBtn8.style.border = "1px solid white";
+    removeBtn9.style.border = "1px solid white";
+    removeBtn10.style.border = "1px solid white";
+    removeBtn11.style.border = "1px solid white";
+    removeBtn12.style.border = "1px solid white";
+
+    // extension logo
+    extnLogo.src = "white-logo.png";
+    // modeBtn backgroundColor
+    modeBtn.style.backgroundColor = "hsl(226, 25%, 17%)";
+    modeBtn.src = "icon-sun.svg";
+    // set the removeBtns, modeBtn Icons Color required only these two things?
+  }
+});
