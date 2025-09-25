@@ -196,3 +196,8 @@ input:checked + .slider:before {
 .moonStyle {
   background-color: hsl(226, 11%, 37%);
 }
+
+.tabsStyle {
+  background-color: hsl(3, 71%, 56%);
+  color: white;
+}

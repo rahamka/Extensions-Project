@@ -269,36 +269,6 @@ modeBtn.addEventListener("click", () => {
   }
 });
 
-allDiv.addEventListener("click", () => {
-  if (modeBtn.src.includes("icon-sun.svg")) {
-    allDiv.style.color = "white";
-    allDiv.style.background = "hsl(3, 71%, 56%)";
-  } else if (modeBtn.src.includes("icon-moon.svg")) {
-    allDiv.style.color = "white";
-    allDiv.style.background = "hsl(3, 71%, 56%)";
-  }
-});
-
-activeDiv.addEventListener("click", () => {
-  if (modeBtn.src.includes("icon-sun.svg")) {
-    activeDiv.style.color = "white";
-    activeDiv.style.background = "hsl(3, 71%, 56%)";
-  } else if (modeBtn.src.includes("icon-moon.svg")) {
-    activeDiv.style.color = "white";
-    activeDiv.style.background = "hsl(3, 71%, 56%)";
-  }
-});
-
-inactiveDiv.addEventListener("click", () => {
-  if (modeBtn.src.includes("icon-sun.svg")) {
-    inactiveDiv.style.color = "white";
-    inactiveDiv.style.background = "hsl(3, 71%, 56%)";
-  } else if (modeBtn.src.includes("icon-moon.svg")) {
-    inactiveDiv.style.color = "white";
-    inactiveDiv.style.background = "hsl(3, 71%, 56%)";
-  }
-});
-
 // Accessing the Slider Button
 // how i can access other html page using JavaScript?
 let headerArea = document.querySelector("#headerArea");
@@ -416,6 +386,24 @@ window.addEventListener("load", () => {
   }
 });
 
+allDiv.addEventListener("click", () => {
+  allDiv.classList.add("tabsStyle");
+  activeDiv.classList.remove("tabsStyle");
+  inactiveDiv.classList.remove("tabsStyle");
+});
+
+activeDiv.addEventListener("click", () => {
+  activeDiv.classList.add("tabsStyle");
+  allDiv.classList.remove("tabsStyle");
+  inactiveDiv.classList.remove("tabsStyle");
+});
+
+inactiveDiv.addEventListener("click", () => {
+  inactiveDiv.classList.add("tabsStyle");
+  allDiv.classList.remove("tabsStyle");
+  activeDiv.classList.remove("tabsStyle");
+});
+
 // where i fail in this project ?
 // In this project I didn't added if i want to click on the remove item then
 // it should be remove
@@ -427,3 +415,5 @@ window.addEventListener("load", () => {
 // on this project then show only activeItems ?
 
 // no matter i should've create another project try to improve in that project ok ?
+
+// use classList and done this change
