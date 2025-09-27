@@ -16,7 +16,7 @@ body {
   background-color: white;
   height: 40px;
   border-radius: 12px;
-  /* How i can use these fonts? */
+  /*Please use these fonts those you've in the next line. */
   /* - **Family**: [Noto Sans](https://fonts.google.com/noto/specimen/Noto+Sans) */
   font-weight: 700;
 }
@@ -44,9 +44,6 @@ img {
   flex-wrap: wrap;
   margin: 40px 10px 0 10px;
 }
-/* how to use media queryies ? */
-/*  when webiste is at 422px then center the Extension List 
-    and all the selectDiv  */
 
 #separteDiv {
   display: flex;
@@ -191,8 +188,6 @@ input:checked + .slider:before {
   transform: translateX(20px);
 }
 
-/*  */
-
 .moonStyle {
   background-color: hsl(226, 11%, 37%);
 }
@@ -201,6 +196,3 @@ input:checked + .slider:before {
   background-color: hsl(3, 71%, 56%);
   color: white;
 }
-
-/* input:enabled {
-} */

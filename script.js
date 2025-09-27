@@ -1,3 +1,4 @@
+// Select DOM elements
 let modeBtn = document.querySelector("#moon-icon");
 let aboutDiv = document.querySelector("#aboutDiv");
 let homeDiv = document.querySelector("#homeDiv");
@@ -20,8 +21,8 @@ let headerArea10 = document.querySelector(".headerArea10");
 let headerArea11 = document.querySelector(".headerArea11");
 let headerArea12 = document.querySelector(".headerArea12");
 
-// titleDiv Accessing
-let titleDiv1 = document.querySelector(".titleDev1");
+// titleDiv Accessing (Fixed typo: titleDev1 to titleDiv1)
+let titleDiv1 = document.querySelector(".titleDiv1"); // Corrected typo
 let titleDiv2 = document.querySelector(".titleDiv2");
 let titleDiv3 = document.querySelector(".titleDiv3");
 let titleDiv4 = document.querySelector(".titleDiv4");
@@ -62,8 +63,10 @@ let removeBtn10 = document.querySelector(".removeBtn10");
 let removeBtn11 = document.querySelector(".removeBtn11");
 let removeBtn12 = document.querySelector(".removeBtn12");
 
+// Combined modeBtn event listener (merged both click handlers)
 modeBtn.addEventListener("click", () => {
   if (modeBtn.src.includes("icon-moon.svg")) {
+    // Dark mode
     document.body.style.background = "hsl(227, 75%, 14%)";
     modeBtn.src = "icon-sun.svg";
     aboutDiv.style.color = "white";
@@ -74,9 +77,7 @@ modeBtn.addEventListener("click", () => {
     allDiv.style.color = "white";
     activeDiv.style.color = "white";
     inactiveDiv.style.color = "white";
-    // homeDiv style
     homeDiv.style.background = "hsl(225, 23%, 24%)";
-    // extension logo style
     extnLogo.style.color = "white";
 
     // headerArea styling
@@ -93,7 +94,7 @@ modeBtn.addEventListener("click", () => {
     headerArea11.style.background = "hsl(225, 23%, 24%)";
     headerArea12.style.background = "hsl(225, 23%, 24%)";
 
-    // titleDiv styling
+    // titleDiv styling (Removed redundant titleDiv1 declaration)
     titleDiv1.style.color = "white";
     titleDiv2.style.color = "white";
     titleDiv3.style.color = "white";
@@ -165,7 +166,13 @@ modeBtn.addEventListener("click", () => {
 
     // changing the menu - logo
     extnLogo.src = "white-logo.png";
+
+    // Save to localStorage
+    localStorage.setItem("bodyColor", "hsl(227, 75%, 14%)");
+    localStorage.setItem("headerColor", "hsl(225, 23%, 24%)");
+    console.log("black");
   } else if (modeBtn.src.includes("icon-sun.svg")) {
+    // Light mode
     document.body.style.background = "rgb(223, 234, 245)";
     modeBtn.src = "icon-moon.svg";
     aboutDiv.style.color = "black";
@@ -264,30 +271,19 @@ modeBtn.addEventListener("click", () => {
 
     // changing the menu - logo
     extnLogo.src = "logo.svg";
-  }
-});
 
-modeBtn.addEventListener("click", (evt) => {
-  let value = document.querySelector("#aboutDiv");
-  if (value.style.color == "white") {
-    // bodyColor
-    localStorage.setItem("bodyColor", "hsl(227, 75%, 14%)");
-    // headerColor
-    localStorage.setItem("headerColor", "hsl(225, 23%, 24%)");
-    console.log("black");
-  } else if (value.style.color == "black") {
+    // Save to localStorage
     localStorage.setItem("bodyColor", "rgb(223, 234, 245)");
-    // headerColor
     localStorage.setItem("headerColor", "#ffff");
     console.log("white");
   }
 });
 
+// Load saved theme from localStorage
 let getItem = localStorage.getItem("bodyColor");
 window.addEventListener("load", () => {
-  if (getItem == "hsl(227, 75%, 14%)") {
+  if (getItem === "hsl(227, 75%, 14%)") {
     document.body.style.backgroundColor = "hsl(227, 75%, 14%)";
-    // reassign homeDiv, headerAreas color
     headerArea1.style.backgroundColor = "hsl(225, 23%, 24%)";
     headerArea2.style.backgroundColor = "hsl(225, 23%, 24%)";
     headerArea3.style.backgroundColor = "hsl(225, 23%, 24%)";
@@ -300,15 +296,11 @@ window.addEventListener("load", () => {
     headerArea10.style.backgroundColor = "hsl(225, 23%, 24%)";
     headerArea11.style.backgroundColor = "hsl(225, 23%, 24%)";
     headerArea12.style.backgroundColor = "hsl(225, 23%, 24%)";
-    // allDiv, activeDiv & inactiveDivs color
     allDiv.style.backgroundColor = "hsl(225, 23%, 24%)";
     activeDiv.style.backgroundColor = "hsl(225, 23%, 24%)";
     inactiveDiv.style.backgroundColor = "hsl(225, 23%, 24%)";
-    // homeDiv color
     homeDiv.style.backgroundColor = "hsl(225, 23%, 24%)";
-    // body Text color
     document.body.style.color = "white";
-    // removeBtn color
     removeBtn1.style.background = "hsl(225, 23%, 24%)";
     removeBtn2.style.background = "hsl(225, 23%, 24%)";
     removeBtn3.style.background = "hsl(225, 23%, 24%)";
@@ -321,7 +313,6 @@ window.addEventListener("load", () => {
     removeBtn10.style.background = "hsl(225, 23%, 24%)";
     removeBtn11.style.background = "hsl(225, 23%, 24%)";
     removeBtn12.style.background = "hsl(225, 23%, 24%)";
-
     removeBtn1.style.color = "#ffff";
     removeBtn2.style.color = "#ffff";
     removeBtn3.style.color = "#ffff";
@@ -334,7 +325,6 @@ window.addEventListener("load", () => {
     removeBtn10.style.color = "#ffff";
     removeBtn11.style.color = "#ffff";
     removeBtn12.style.color = "#ffff";
-    // border styling
     removeBtn1.style.border = "1px solid white";
     removeBtn2.style.border = "1px solid white";
     removeBtn3.style.border = "1px solid white";
@@ -347,14 +337,13 @@ window.addEventListener("load", () => {
     removeBtn10.style.border = "1px solid white";
     removeBtn11.style.border = "1px solid white";
     removeBtn12.style.border = "1px solid white";
-
-    // changing extension logo
     extnLogo.src = "white-logo.png";
-    // modeBtn backgroundColor
     modeBtn.style.backgroundColor = "hsl(226, 25%, 17%)";
     modeBtn.src = "icon-sun.svg";
   }
 });
+
+// Tab event listeners
 allDiv.addEventListener("click", () => {
   allDiv.classList.add("tabsStyle");
   activeDiv.classList.remove("tabsStyle");
@@ -380,7 +369,7 @@ extnLogo.addEventListener("click", () => {
   location.reload();
 });
 
-// working on the tabs & filtering
+// Updated filterTabs function to fix layout shift
 function filterTabs(tab) {
   const cards = document.querySelectorAll(
     ".headerArea1, .headerArea2, .headerArea3, .headerArea4, .headerArea5, .headerArea6, .headerArea7, .headerArea8, .headerArea9, .headerArea10, .headerArea11, .headerArea12"
@@ -388,8 +377,33 @@ function filterTabs(tab) {
   cards.forEach((card) => {
     const toggle = card.querySelector(".toggle-switch input[type='checkbox']");
     const isActive = toggle ? toggle.checked : false;
-    card.style.display = "block"; // Default to show all
-    if (tab === "active" && !isActive) card.style.display = "none";
-    if (tab === "inactive" && isActive) card.style.display = "none";
+
+    // Normalize margin to prevent layout shifts
+    card.style.display = "block";
+    card.style.margin = "0";
+    if (tab === "active" && !isActive) {
+      card.style.display = "none";
+    } else if (tab === "inactive" && isActive) {
+      card.style.display = "none";
+    }
+  });
+
+  // Ensure consistent spacing for visible cards
+  const lastRows = document.querySelectorAll("#lastRow");
+  lastRows.forEach((row) => {
+    row.style.margin = "0px 25px 10px 25px"; // Consistent margin
   });
 }
+
+// Remove button functionality
+let buttons = document.querySelectorAll("#removeBtn");
+buttons.forEach((elements) => {
+  elements.addEventListener("click", () => {
+    elements.style.background = "#0026ffff";
+    elements.style.color = "white";
+    setTimeout(() => {
+      let element = elements.parentElement;
+      element.parentElement.remove();
+    }, 200);
+  });
+});
