@@ -201,3 +201,6 @@ input:checked + .slider:before {
   background-color: hsl(3, 71%, 56%);
   color: white;
 }
+
+/* input:enabled {
+} */

@@ -2,7 +2,7 @@ let modeBtn = document.querySelector("#moon-icon");
 let aboutDiv = document.querySelector("#aboutDiv");
 let homeDiv = document.querySelector("#homeDiv");
 let allDiv = document.querySelector("#allDiv");
-let activeDiv = document.querySelector(".activeDiv");
+let activeDiv = document.querySelector("#activeDiv");
 let inactiveDiv = document.querySelector("#inactiveDiv");
 let extnLogo = document.querySelector("#logoDiv");
 
@@ -21,7 +21,7 @@ let headerArea11 = document.querySelector(".headerArea11");
 let headerArea12 = document.querySelector(".headerArea12");
 
 // titleDiv Accessing
-let titleDiv1 = document.querySelector(".titleDiv1");
+let titleDiv1 = document.querySelector(".titleDev1");
 let titleDiv2 = document.querySelector(".titleDiv2");
 let titleDiv3 = document.querySelector(".titleDiv3");
 let titleDiv4 = document.querySelector(".titleDiv4");
@@ -61,7 +61,7 @@ let removeBtn9 = document.querySelector(".removeBtn9");
 let removeBtn10 = document.querySelector(".removeBtn10");
 let removeBtn11 = document.querySelector(".removeBtn11");
 let removeBtn12 = document.querySelector(".removeBtn12");
-//
+
 modeBtn.addEventListener("click", () => {
   if (modeBtn.src.includes("icon-moon.svg")) {
     document.body.style.background = "hsl(227, 75%, 14%)";
@@ -76,10 +76,9 @@ modeBtn.addEventListener("click", () => {
     inactiveDiv.style.color = "white";
     // homeDiv style
     homeDiv.style.background = "hsl(225, 23%, 24%)";
-    // extension logo stylehsl(225, 23%, 24%)
+    // extension logo style
     extnLogo.style.color = "white";
-    // extnLogo style isn't working?
-    //
+
     // headerArea styling
     headerArea1.style.background = "hsl(225, 23%, 24%)";
     headerArea2.style.background = "hsl(225, 23%, 24%)";
@@ -193,7 +192,7 @@ modeBtn.addEventListener("click", () => {
     headerArea11.style.background = "white";
     headerArea12.style.background = "white";
 
-    // titleDiv styleing
+    // titleDiv styling
     titleDiv1.style.color = "black";
     titleDiv2.style.color = "black";
     titleDiv3.style.color = "black";
@@ -250,7 +249,6 @@ modeBtn.addEventListener("click", () => {
     removeBtn12.style.color = "black";
 
     // removeBtn border color styling
-
     removeBtn1.style.border = "1px solid black";
     removeBtn2.style.border = "1px solid black";
     removeBtn3.style.border = "1px solid black";
@@ -267,33 +265,6 @@ modeBtn.addEventListener("click", () => {
     // changing the menu - logo
     extnLogo.src = "logo.svg";
   }
-});
-
-// Accessing the Slider Button
-// how i can access other html page using JavaScript?
-let headerArea = document.querySelector("#headerArea");
-let slider1 = document.querySelector(".slider1");
-if (slider1) {
-  slider1.addEventListener("click", () => {
-    localStorage.setItem("headerArea1", headerArea1);
-    localStorage.getItem("headerArea1");
-    console.log(headerArea1);
-  });
-}
-let slider2 = document.querySelector(".slider2");
-let slider3 = document.querySelector(".slider3");
-let slider4 = document.querySelector(".slider4");
-let slider5 = document.querySelector(".slider5");
-let slider6 = document.querySelector(".slider6");
-let slider7 = document.querySelector(".slider7");
-let slider8 = document.querySelector(".slider8");
-let slider9 = document.querySelector(".slider9");
-let slider10 = document.querySelector(".slider10");
-let slider11 = document.querySelector(".slider11");
-let slider12 = document.querySelector(".slider12");
-
-extnLogo.addEventListener("click", () => {
-  location.reload();
 });
 
 modeBtn.addEventListener("click", (evt) => {
@@ -316,7 +287,7 @@ let getItem = localStorage.getItem("bodyColor");
 window.addEventListener("load", () => {
   if (getItem == "hsl(227, 75%, 14%)") {
     document.body.style.backgroundColor = "hsl(227, 75%, 14%)";
-    // reasign homeDiv, headerAreas color
+    // reassign homeDiv, headerAreas color
     headerArea1.style.backgroundColor = "hsl(225, 23%, 24%)";
     headerArea2.style.backgroundColor = "hsl(225, 23%, 24%)";
     headerArea3.style.backgroundColor = "hsl(225, 23%, 24%)";
@@ -377,43 +348,48 @@ window.addEventListener("load", () => {
     removeBtn11.style.border = "1px solid white";
     removeBtn12.style.border = "1px solid white";
 
-    // extension logo
+    // changing extension logo
     extnLogo.src = "white-logo.png";
     // modeBtn backgroundColor
     modeBtn.style.backgroundColor = "hsl(226, 25%, 17%)";
     modeBtn.src = "icon-sun.svg";
-    // set the removeBtns, modeBtn Icons Color required only these two things?
   }
 });
-
 allDiv.addEventListener("click", () => {
   allDiv.classList.add("tabsStyle");
   activeDiv.classList.remove("tabsStyle");
   inactiveDiv.classList.remove("tabsStyle");
+  filterTabs("all");
 });
 
 activeDiv.addEventListener("click", () => {
   activeDiv.classList.add("tabsStyle");
   allDiv.classList.remove("tabsStyle");
   inactiveDiv.classList.remove("tabsStyle");
+  filterTabs("active");
 });
 
 inactiveDiv.addEventListener("click", () => {
   inactiveDiv.classList.add("tabsStyle");
   allDiv.classList.remove("tabsStyle");
   activeDiv.classList.remove("tabsStyle");
+  filterTabs("inactive");
 });
 
-// where i fail in this project ?
-// In this project I didn't added if i want to click on the remove item then
-// it should be remove
+extnLogo.addEventListener("click", () => {
+  location.reload();
+});
 
-// if i want to click on the activeDiv, allDiv, inactiveDiv then style will
-// remove from others?
-
-// i were not added logic on the allDiv, activeDiv & inactiveDiv when click
-// on this project then show only activeItems ?
-
-// no matter i should've create another project try to improve in that project ok ?
-
-// use classList and done this change
+// working on the tabs & filtering
+function filterTabs(tab) {
+  const cards = document.querySelectorAll(
+    ".headerArea1, .headerArea2, .headerArea3, .headerArea4, .headerArea5, .headerArea6, .headerArea7, .headerArea8, .headerArea9, .headerArea10, .headerArea11, .headerArea12"
+  );
+  cards.forEach((card) => {
+    const toggle = card.querySelector(".toggle-switch input[type='checkbox']");
+    const isActive = toggle ? toggle.checked : false;
+    card.style.display = "block"; // Default to show all
+    if (tab === "active" && !isActive) card.style.display = "none";
+    if (tab === "inactive" && isActive) card.style.display = "none";
+  });
+}
