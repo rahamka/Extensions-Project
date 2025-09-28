@@ -351,11 +351,17 @@ allDiv.addEventListener("click", () => {
   filterTabs("all");
 });
 
+// letSection
+let lastSection = document.querySelector("#lastSection");
 activeDiv.addEventListener("click", () => {
   activeDiv.classList.add("tabsStyle");
   allDiv.classList.remove("tabsStyle");
   inactiveDiv.classList.remove("tabsStyle");
   filterTabs("active");
+  // correct this i want to say if there is no cards after clicking on the activeDiv then show this image
+  if (lastSection.innerHTML == "") {
+    lastSection.append("noTask.jpg");
+  }
 });
 
 inactiveDiv.addEventListener("click", () => {
@@ -363,6 +369,10 @@ inactiveDiv.addEventListener("click", () => {
   allDiv.classList.remove("tabsStyle");
   activeDiv.classList.remove("tabsStyle");
   filterTabs("inactive");
+  // correct this i want to say if there is no cards after clicking on the activeDiv then show this image
+  // if ((lastSection.innerHTML = "")) {
+  //   lastSection.append("noTask.jpg");
+  // }
 });
 
 extnLogo.addEventListener("click", () => {
