@@ -1,1 +1,22 @@
+# Ignore vendor libraries (e.g., node_modules)
+node_modules/ linguist-vendored
 
+# Ignore generated/minified JS files
+*.min.js linguist-generated
+
+# Treat documentation and config files as non-code
+*.md linguist-documentation
+*.markdown linguist-documentation
+*.json linguist-documentation
+*.yml linguist-documentation
+*.yaml linguist-documentation
+
+# Ignore non-code assets
+*.png linguist-generated
+*.jpg linguist-generated
+*.jpeg linguist-generated
+*.gif linguist-generated
+*.svg linguist-generated
+
+# Ensure script.js is counted as JavaScript
+script.js linguist-language=JavaScript
