@@ -1,23 +1,22 @@
-Extensions Project 🚀
+Extensions Project 🚀<br>
+I built the Extensions Project using native JavaScript, CSS, and HTML to showcase my skills in creating a dynamic and responsive web application. 🌟<br><br>
 
-I built the Extensions Project using native JavaScript, CSS, and HTML to showcase my skills in creating a dynamic and responsive web application. 🌟
+❣ What I Learned:<br><br>
 
-❣ What I Learned:
+╰┈➤ How to filter cards dynamically using JavaScript. 🃏<br>
+╰┈➤ How to maintain body styles after page reloads. 🎨<br>
+╰┈➤ How to utilize EventListeners for interactive features. 🎯<br>
+╰┈➤ How to create responsive websites using @media queries. 📱<br><br>
 
-╰┈➤ How to filter cards dynamically using JavaScript. 🃏
-╰┈➤ How to maintain body styles after page reloads. 🎨
-╰┈➤ How to utilize EventListeners for interactive features. 🎯
-╰┈➤ How to create responsive websites using @media queries. 📱
+❣ Project Features:<br><br>
 
-❣ Project Features:
+𓇻 Toggle Button: Switch between different views seamlessly. 🔄<br>
+𓇻 Card Remove Button: Easily remove cards from the interface. 🗑️<br>
+𓇻 All, Active, Inactive Tabs: Filter extensions based on their status. 📑<br><br>
 
-𓇻 Toggle Button: Switch between different views seamlessly. 🔄
-𓇻 Card Remove Button: Easily remove cards from the interface. 🗑️
-𓇻 All, Active, Inactive Tabs: Filter extensions based on their status. 📑
+❣ Links:<br><br>
 
-❣ Links:
-
-╰┈➤ Project Link: https://lnkd.in/ebxyqXBU 🌐
-╰┈➤ Code Link: https://lnkd.in/e8j4xXnR 💻
+╰┈➤ Project Link: https://lnkd.in/ebxyqXBU 🌐<br>
+╰┈➤ Code Link: https://lnkd.in/e8j4xXnR 💻<br><br>
 
 .⭒☆ Inshallah, I'll create even more amazing projects than Extensions Project! ☆⭒
